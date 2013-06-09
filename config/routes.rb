@@ -1,4 +1,6 @@
 EmptyRailsProject::Application.routes.draw do
+  get "empty/test"
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
