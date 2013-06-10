@@ -10,7 +10,7 @@ set :use_sudo, false
 
 ssh_options[:keys] = ["~/.ssh/chef.pem"]
 
-server "ec2-54-228-148-206.eu-west-1.compute.amazonaws.com", :app, :web, :db, :primary => true
+server "ec2-54-216-131-15.eu-west-1.compute.amazonaws.com", :app, :web, :db, :primary => true
 
 desc "Zero-downtime restart of Unicorn"
 task :restart, :except => { :no_release => true } do

@@ -1,4 +1,7 @@
 EmptyRailsProject::Application.routes.draw do
+  resources :articles
+
+
   get "empty/test"
 
   # The priority is based upon order of creation:
