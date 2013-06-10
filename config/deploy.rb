@@ -14,7 +14,7 @@ server "ec2-54-228-148-206.eu-west-1.compute.amazonaws.com", :app, :web, :db, :p
 
 desc "Zero-downtime restart of Unicorn"
 task :restart, :except => { :no_release => true } do
-  run "kill -s HUP `cat #{shared_path}/pids/unicorn.pid`"
+  run "kill -s USR2 `cat #{shared_path}/pids/unicorn.pid`"
 end
 
 desc "Start unicorn"
@@ -24,7 +24,7 @@ end
 
 desc "Stop unicorn"
 task :stop, :except => { :no_release => true } do
-  run "kill -9 `cat #{shared_path}/pids/unicorn.pid`"
+  run "kill -s QUIT `cat #{shared_path}/pids/unicorn.pid`"
 end
 
 after "deploy", "restart"
